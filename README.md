@@ -5,7 +5,7 @@
 * do npm install http-server -g
 * git clone https://github.com/AttiqUrRehman007/react
 * cd react
-* now run http-server -o react/
+* npm start
 
 ### Requirements
 * Node latest version
