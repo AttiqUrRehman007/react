@@ -1,11 +1,11 @@
 ### React App
 
 #### How to run this
-* Open git bash
-##### Run the following commands
-* npx create-react-app my-app
-* cd my-app
-* npm start
+* Open your terminal
+* do npm install http-server -g
+* git clone https://github.com/AttiqUrRehman007/react
+* cd react
+* now run http-server -o react/
 
 ### Requirements
 * Node latest version
