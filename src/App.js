@@ -1,6 +1,21 @@
 import React, { Component } from 'react';
-import './App.css';
+import classsList from './App.css';
+// import styled from 'styled-components';
 import Person from './Person/Person';
+
+// const StyledButton = styled.button`
+//   background-color: ${props => props.alt ? 'black' : 'teal'};
+//       color: white;
+//       font: inherit;
+//       border: 1px solid blue;
+//       padding: 8px;
+//       cursor: pointer;
+//
+//       &:hover{
+//           background-color: ${props => props.alt ? 'navy' : 'aqua'};
+//           color: black;
+//       }
+//     `
 
 class App extends Component {
   state = {
@@ -47,13 +62,7 @@ class App extends Component {
   }
 
   render() {
-    const style = {
-      backgroundColor: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer'
-    }
+    let btnClass = '';
     let persons = null;
     if(this.state.showPersons)
     {
@@ -69,14 +78,22 @@ class App extends Component {
               })}
           </div>
       )
+        btnClass = classsList.Red;
+    }
+    const classes = [];
+    if(this.state.persons.length <= 2){
+        classes.push('teal')
+    }
+    if(this.state.persons.length <= 1){
+        classes.push('bold')
     }
 
     return (
-      <div className="App">
+      <div className={classsList.App}>
         <h1>Hi, I'm React App</h1>
-        <p>It is really working WoW</p>
+        <p className={classes.join(' ')}>It is really working WoW</p>
         <button
-            style={style}
+            className={btnClass}
             onClick={this.togglePersonHandler}
           //  onClick={() => this.switchNameHandler('Attiq Ur Rehman')}
         >Toggle Persons</button>
